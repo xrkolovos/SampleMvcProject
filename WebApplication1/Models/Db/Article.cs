@@ -7,6 +7,11 @@ namespace WebApplication1.Models.Db
 {
     public class Article
     {
+        public Article()
+        {
+            DateTimeCreated = DateTimeOffset.Now;
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
