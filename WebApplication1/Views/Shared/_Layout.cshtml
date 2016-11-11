@@ -6,7 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,6 +26,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="/Categories">Categories</a></li>
+                    <li><a href="/Articles">Articles</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -38,7 +42,12 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/MyAppScript.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

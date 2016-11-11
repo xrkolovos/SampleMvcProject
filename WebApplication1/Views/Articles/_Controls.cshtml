@@ -1,0 +1,68 @@
+﻿@using WebApplication1.Models.Db
+@model WebApplication1.Models.Db.Article
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DateTimeCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.DateTimeCreated, new { htmlAttributes = new { @class = "form-control datetimepicker" } })
+        @Html.ValidationMessageFor(model => model.DateTimeCreated, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DateTimePublished, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.DateTimePublished, new { htmlAttributes = new { @class = "form-control datetimepicker" } })
+        @Html.ValidationMessageFor(model => model.DateTimePublished, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+
+        @{
+            //mixanismos gia lista
+            var slCatId = (List<Category>)ViewBag.CategoryId2;
+        }
+        <hr />
+        <select class="form-control" id="CategoryId" name="CategoryId">
+            @foreach (var o in slCatId) {
+
+                <option @(Model != null && o.Id == Model.CategoryId ? "selected" : "") value="@o.Id">@o.Title</option>
+            }
+        </select>
+
+
+        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.AuthorId, "AuthorId", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("AuthorId", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.AuthorId, "", new { @class = "text-danger" })
+    </div>
+</div>

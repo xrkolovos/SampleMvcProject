@@ -16,7 +16,7 @@ namespace WebApplication1.Migrations
                         CategoryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: false)
                 .Index(t => t.CategoryId);
             
             CreateTable(

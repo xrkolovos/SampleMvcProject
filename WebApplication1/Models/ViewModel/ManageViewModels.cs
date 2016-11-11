@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace WebApplication1.Models
+namespace WebApplication1.Models.ViewModel
 {
     public class IndexViewModel
     {
