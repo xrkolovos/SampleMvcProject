@@ -64,7 +64,11 @@ namespace WebApplication1.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
+            //User.Identity.
+
             var userId = User.Identity.GetUserId();
+            _userManager.AddToRole(userId, "Administrator");
+
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
